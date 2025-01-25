@@ -5462,14 +5462,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ac8d30c6a0d9642a11e5be4c440740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Root: {fileID: 9025368147377274304}
+  m_Root: {fileID: 5048360898695405943}
   m_Roots:
-  - {fileID: 5743516741332055419}
-  - {fileID: 1074607867307476668}
-  - {fileID: 4119019607548569590}
-  - {fileID: 1749661270091141822}
-  - {fileID: 5351481321507448654}
-  - {fileID: 5464702761480975523}
+  - {fileID: 416909178018398825}
+  - {fileID: 8110086564380587621}
+  - {fileID: 1396387182635851007}
+  - {fileID: 7965626834954289658}
+  - {fileID: 2655967077504751205}
+  - {fileID: 6178998927042800774}
   m_UpdateRate: 120
   m_UpdateMode: 3
   m_Damping: 1
@@ -5479,14 +5479,14 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_Elasticity: 0.4
+  m_Elasticity: 0.05
   m_ElasticityDistrib:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_Stiffness: 0.1
+  m_Stiffness: 0
   m_StiffnessDistrib:
     serializedVersion: 2
     m_Curve: []
@@ -5517,7 +5517,7 @@ MonoBehaviour:
   m_EndLength: 0
   m_EndOffset: {x: 0, y: 0, z: 0}
   m_Gravity: {x: 0, y: 0, z: 0}
-  m_Force: {x: 0, y: 0, z: 0}
+  m_Force: {x: 0, y: -0.05, z: 0}
   m_BlendWeight: 1
   m_Colliders: []
   m_Exclusions: []
