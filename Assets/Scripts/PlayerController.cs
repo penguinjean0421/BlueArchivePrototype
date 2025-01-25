@@ -28,7 +28,8 @@ public class PlayerController : MonoBehaviour
 
   void FixedUpdate()
   {
-    playerRigid.AddForce(new Vector3(Input.GetAxisRaw("Horizontal") * speed, playerRigid.linearVelocity.y, Input.GetAxisRaw("Vertical") * speed), ForceMode.Impulse);
+    playerRigid.AddForce(Vector3.right * Input.GetAxisRaw("Horizontal") * speed, ForceMode.Impulse);
+    playerRigid.AddForce(Vector3.forward * Input.GetAxisRaw("Vertical") * speed, ForceMode.Impulse);
 
     if (playerRigid.linearVelocity.z > maxSpeed)
     {
@@ -48,6 +49,13 @@ public class PlayerController : MonoBehaviour
       playerRigid.linearVelocity = new Vector3(-maxSpeed, playerRigid.linearVelocity.y, playerRigid.linearVelocity.z);
     }
 
-    Debug.Log("X축 속도 : " + playerRigid.linearVelocity.x + " Z축 속도 : " + playerRigid.linearVelocity.z);
+    if (Input.GetButtonDown("Horizontal"))
+    {
+      Debug.Log("속도 : " + playerRigid.linearVelocity.x);
+    }
+    else if (Input.GetButtonDown("Vertical"))
+    {
+      Debug.Log("속도 " + playerRigid.linearVelocity.z);
+    }
   }
 }
