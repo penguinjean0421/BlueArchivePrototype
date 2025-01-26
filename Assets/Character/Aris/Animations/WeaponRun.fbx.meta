@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 12c3e9960a5fabd4db8a42bc6be802f8
+guid: 5ffca497f21544816bd661d1bfc3a78c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -31,7 +31,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Walk
+      name: WeaponRun
       takeName: Aris_Rig|Aris_RigAction
       internalID: -1552032593682900193
       firstFrame: 0

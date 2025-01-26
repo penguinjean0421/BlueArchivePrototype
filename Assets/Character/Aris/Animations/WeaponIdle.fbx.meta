@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 12c3e9960a5fabd4db8a42bc6be802f8
+guid: 9ebe182ebfc4e4f21ab9280eae156723
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -31,11 +31,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Walk
+      name: WeaponIdle
       takeName: Aris_Rig|Aris_RigAction
       internalID: -1552032593682900193
       firstFrame: 0
-      lastFrame: 25
+      lastFrame: 121
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
