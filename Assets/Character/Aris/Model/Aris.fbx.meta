@@ -3,47 +3,7 @@ guid: 5b318c5165387b44687681ed1d8474be
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Body
-    second: {fileID: 2100000, guid: 3f031598876b9384e869cfaacaf3e3c1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Cloth
-    second: {fileID: 2100000, guid: 05e6b6ccf11f6b84f9fac261869e1675, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Eye
-    second: {fileID: 2100000, guid: 6e6058b09880d414bbff3885a1b86f5e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Eyeline
-    second: {fileID: 2100000, guid: cb18edceb9a1015459be59f80a348f5e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Face
-    second: {fileID: 2100000, guid: 81d07e361a0ceec40be27dbd1fd8b978, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Hair
-    second: {fileID: 2100000, guid: 4916c77448f93554c95d4e9e60cc2b09, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Weapon
-    second: {fileID: 2100000, guid: 44b90cd28d51bdd4895b636e5ce8db2a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_halo
-    second: {fileID: 2100000, guid: 755dd1df920b36e49b26c040962baa8d, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -116,7 +76,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 0
+  importAnimation: 1
   humanDescription:
     serializedVersion: 3
     human: []

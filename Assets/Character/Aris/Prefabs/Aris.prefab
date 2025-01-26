@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7636392484133500841}
+  - component: {fileID: 6467791650653848885}
   m_Layer: 0
   m_Name: chest
   m_TagString: Untagged
@@ -35,6 +36,24 @@ Transform:
   - {fileID: 6320217499043288783}
   m_Father: {fileID: 1931616289855638524}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6467791650653848885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56597543584847970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baedd976e12657241bf7ff2d1c685342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Bound: 0
+  m_Radius: 0.0008
+  m_Height: 0.004
+  m_Radius2: 0
 --- !u!1 &125100931263310843
 GameObject:
   m_ObjectHideFlags: 0
@@ -2496,6 +2515,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4742016394279194990}
+  - component: {fileID: 7928369381812147562}
   m_Layer: 0
   m_Name: thigh.R
   m_TagString: Untagged
@@ -2519,6 +2539,24 @@ Transform:
   - {fileID: 6790342187584635638}
   m_Father: {fileID: 655599731618816356}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7928369381812147562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3971889567948694125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baedd976e12657241bf7ff2d1c685342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.0005, z: 0}
+  m_Bound: 0
+  m_Radius: 0.001
+  m_Height: 0.004
+  m_Radius2: 0
 --- !u!1 &4093210947428990485
 GameObject:
   m_ObjectHideFlags: 0
@@ -2815,6 +2853,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8247364972021077316}
+  - component: {fileID: 8033371347931136214}
   m_Layer: 0
   m_Name: thigh.L
   m_TagString: Untagged
@@ -2838,6 +2877,24 @@ Transform:
   - {fileID: 5595198083537839366}
   m_Father: {fileID: 655599731618816356}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8033371347931136214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5075019332657943496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baedd976e12657241bf7ff2d1c685342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.0005, z: 0}
+  m_Bound: 0
+  m_Radius: 0.001
+  m_Height: 0.004
+  m_Radius2: 0
 --- !u!1 &5081613480666048019
 GameObject:
   m_ObjectHideFlags: 0
@@ -4376,6 +4433,7 @@ GameObject:
   - component: {fileID: 9071861345010737361}
   - component: {fileID: 1561393309624217502}
   - component: {fileID: 1596971959553531765}
+  - component: {fileID: 7651811868532898860}
   m_Layer: 0
   m_Name: Aris
   m_TagString: Untagged
@@ -4451,6 +4509,88 @@ CapsuleCollider:
   m_Height: 2.2
   m_Direction: 1
   m_Center: {x: 0, y: 1.1, z: -0.1}
+--- !u!114 &7651811868532898860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7060946730118095331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ac8d30c6a0d9642a11e5be4c440740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Root: {fileID: 3128359518007266786}
+  m_Roots:
+  - {fileID: 6792908384431469029}
+  - {fileID: 2325009622705792811}
+  - {fileID: 1191031253313712850}
+  m_UpdateRate: 120
+  m_UpdateMode: 3
+  m_Damping: 0.3
+  m_DampingDistrib:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_Elasticity: 0.05
+  m_ElasticityDistrib:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_Stiffness: 0.1
+  m_StiffnessDistrib:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_Inert: 0
+  m_InertDistrib:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_Friction: 0
+  m_FrictionDistrib:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_Radius: 0
+  m_RadiusDistrib:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_EndLength: 0
+  m_EndOffset: {x: 0, y: 0, z: 0}
+  m_Gravity: {x: 0, y: 0, z: 0}
+  m_Force: {x: 0, y: 0, z: 0}
+  m_BlendWeight: 1
+  m_Colliders: []
+  m_Exclusions: []
+  m_FreezeAxis: 0
+  m_DistantDisable: 0
+  m_ReferenceObject: {fileID: 0}
+  m_DistanceToObject: 20
+  m_Multithread: 1
 --- !u!1 &7072310177683373822
 GameObject:
   m_ObjectHideFlags: 0

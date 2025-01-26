@@ -87,7 +87,7 @@ public class GamePlayerController : MonoBehaviour
             {
                 smoothBlend += Time.deltaTime * 3;
             }
-            animController.SetFloat("Walk Blend", smoothBlend);
+            animController.SetFloat("Weapon Blend", smoothBlend);
         }
         else
         {
@@ -95,7 +95,7 @@ public class GamePlayerController : MonoBehaviour
             {
                 smoothBlend -= Time.deltaTime * 3;
             }
-            animController.SetFloat("Walk Blend", smoothBlend);
+            animController.SetFloat("Weapon Blend", smoothBlend);
         }
     }
 }

@@ -900,10 +900,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage
       objectReference: {fileID: 0}
-    - target: {fileID: 1368411779102575417, guid: c3219f5b419a5dd49a7a6a97adf4c0b3, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7776666450354797777, guid: c3219f5b419a5dd49a7a6a97adf4c0b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -947,38 +943,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 785968205709375848, guid: c3219f5b419a5dd49a7a6a97adf4c0b3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9098774129156099968}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3219f5b419a5dd49a7a6a97adf4c0b3, type: 3}
---- !u!1 &4801221916677528160 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 785968205709375848, guid: c3219f5b419a5dd49a7a6a97adf4c0b3, type: 3}
-  m_PrefabInstance: {fileID: 4196635562824043767}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &9098774129156099968
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4801221916677528160}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: -1
-  m_Mesh: {fileID: -4557102510334669097, guid: c293fce27b9279a47bd485183dd64c5a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

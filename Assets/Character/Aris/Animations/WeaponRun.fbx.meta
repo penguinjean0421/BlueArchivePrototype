@@ -31,7 +31,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: WeaponRun
+      name: Weapon Run
       takeName: Aris_Rig|Aris_RigAction
       internalID: -1552032593682900193
       firstFrame: 0
