@@ -584,6 +584,7 @@ MonoBehaviour:
   animController: {fileID: 3136609903105734214}
   playerInputSC: {fileID: 832276348}
   walkSpeed: 1
+  runSpeed: 1.5
   rotationSpeed: 7
   rbDrag: 2
 --- !u!114 &832276346
@@ -692,6 +693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EKey: 0
   weaponEquipCoolTime: 1
+  Run: 0
 --- !u!4 &1297515239 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 736509575333102893, guid: aa45a99cd6b5f994ab5c7fae0289ae3b, type: 3}
