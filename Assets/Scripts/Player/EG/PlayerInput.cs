@@ -7,6 +7,9 @@ public class PlayerInput : MonoBehaviour
     public float weaponEquipCoolTime = 0.5f;
     private float weaponEquipCurTime = 0.0f;
 
+    [Header("Run")]
+    public bool Run = false;
+
     private void Start()
     {
         weaponEquipCurTime = weaponEquipCoolTime;
@@ -15,6 +18,7 @@ public class PlayerInput : MonoBehaviour
     private void Update()
     {
         InputE();
+        Running();
     }
 
     private void InputE()
@@ -32,6 +36,18 @@ public class PlayerInput : MonoBehaviour
         {
             EKey = false;
             weaponEquipCurTime = 0.0f;
+        }
+    }
+
+    private void Running()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift) && Run == false)
+        {
+            Run = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftShift) && Run == true)
+        {
+            Run = false;
         }
     }
 }

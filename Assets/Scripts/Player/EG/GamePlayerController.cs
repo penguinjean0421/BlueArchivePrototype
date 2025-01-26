@@ -12,6 +12,7 @@ public class GamePlayerController : MonoBehaviour
 
     [Header("PlayerSetting")]
     public float walkSpeed = 0;
+    public float runSpeed = 0;
     public float rotationSpeed = 0;
     public float rbDrag = 3;
 
@@ -19,6 +20,7 @@ public class GamePlayerController : MonoBehaviour
     float horizontalInput = 0.0f;
     float verticalInput = 0.0f;
     private Vector3 moveDir = Vector3.zero;
+    private float curSpeed = 0.0f;
 
     // weapon equip/unequip smooth blend
     float smoothBlend = 0.0f;
@@ -27,18 +29,20 @@ public class GamePlayerController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        curSpeed = walkSpeed;
     }
 
     private void Update()
     {
         GetInput();
         PlayerRotate();
+        WeaponEquip();
     }
 
     private void FixedUpdate()
     {
         PlayerMovement();
-        WeaponEquip();
     }
 
     private void GetInput()
@@ -66,16 +70,30 @@ public class GamePlayerController : MonoBehaviour
     private void PlayerMovement()
     {
         moveDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
-        rb.AddForce(moveDir.normalized * walkSpeed * 10.0f, ForceMode.Force);
+        rb.AddForce(moveDir.normalized * curSpeed * 10.0f, ForceMode.Force);
         rb.linearDamping = rbDrag;
 
         if (horizontalInput != 0 || verticalInput != 0)
         {
             animController.SetBool("IsWalk", true);
         }
-        else
+        else if (horizontalInput == 0 && verticalInput == 0)
         {
             animController.SetBool("IsWalk", false);
+            animController.SetBool("IsRun", false);
+            playerInputSC.Run = false;
+        }
+
+        if (playerInputSC.Run == true)
+        {
+            curSpeed = runSpeed;
+            animController.SetBool("IsRun", true);
+            animController.SetBool("IsWalk", false);
+        }
+        else if (playerInputSC.Run == false)
+        {
+            curSpeed = walkSpeed;
+            animController.SetBool("IsRun", false);
         }
     }
 
