@@ -8,6 +8,7 @@ public class GamePlayerController : MonoBehaviour
     public Transform playerOBJ;
     public Rigidbody rb;
     public Animator animController;
+    public PlayerInput playerInputSC;
 
     [Header("PlayerSetting")]
     public float walkSpeed = 0;
@@ -18,6 +19,9 @@ public class GamePlayerController : MonoBehaviour
     float horizontalInput = 0.0f;
     float verticalInput = 0.0f;
     private Vector3 moveDir = Vector3.zero;
+
+    // weapon equip/unequip smooth blend
+    float smoothBlend = 0.0f;
 
     private void Start()
     {
@@ -34,6 +38,7 @@ public class GamePlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         PlayerMovement();
+        WeaponEquip();
     }
 
     private void GetInput()
@@ -71,6 +76,26 @@ public class GamePlayerController : MonoBehaviour
         else
         {
             animController.SetBool("IsWalk", false);
+        }
+    }
+
+    private void WeaponEquip()
+    {
+        if (playerInputSC.EKey == true)
+        {
+            if (smoothBlend < 1.0f)
+            {
+                smoothBlend += Time.deltaTime * 3;
+            }
+            animController.SetFloat("Walk Blend", smoothBlend);
+        }
+        else
+        {
+            if (smoothBlend > 0)
+            {
+                smoothBlend -= Time.deltaTime * 3;
+            }
+            animController.SetFloat("Walk Blend", smoothBlend);
         }
     }
 }
