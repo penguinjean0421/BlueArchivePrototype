@@ -7,10 +7,11 @@ public class PlayerController : MonoBehaviour
   public float maxSpeed = 0f;
 
   Rigidbody playerRigid = null;
-
+  Transform playerTrans = null;
   void Awake()
   {
     playerRigid = GetComponent<Rigidbody>();
+    playerTrans = GetComponent<Transform>();
   }
 
   void Update()
