@@ -9,6 +9,8 @@ public class GamePlayerController : MonoBehaviour
     public Rigidbody rb;
     public Animator animController;
     public PlayerInput playerInputSC;
+    public Transform attackSpawn;
+    public GameObject basicAttackVFX;
 
     [Header("PlayerSetting")]
     public float walkSpeed = 0;
@@ -38,6 +40,7 @@ public class GamePlayerController : MonoBehaviour
         GetInput();
         PlayerRotate();
         WeaponEquip();
+        BasicAttack();
     }
 
     private void FixedUpdate()
@@ -95,6 +98,19 @@ public class GamePlayerController : MonoBehaviour
             curSpeed = walkSpeed;
             animController.SetBool("IsRun", false);
         }
+
+        if (playerInputSC.basicAttack == true)
+        {
+            curSpeed = 0.0f;
+        }
+        else if (playerInputSC.basicAttack == false && playerInputSC.Run == false)
+        {
+            curSpeed = walkSpeed;
+        }
+        else if (playerInputSC.basicAttack == false && playerInputSC.Run == true)
+        {
+            curSpeed = runSpeed;
+        }
     }
 
     private void WeaponEquip()
@@ -114,6 +130,18 @@ public class GamePlayerController : MonoBehaviour
                 smoothBlend -= Time.deltaTime * 3;
             }
             animController.SetFloat("Weapon Blend", smoothBlend);
+        }
+    }
+
+    private void BasicAttack()
+    {
+        if (playerInputSC.basicAttack == true)
+        {
+            animController.SetBool("Attacking", true);
+        }
+        else
+        {
+            animController.SetBool("Attacking", false);
         }
     }
 }
