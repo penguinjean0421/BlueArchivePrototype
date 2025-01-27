@@ -38,6 +38,7 @@ Material:
     - _OutlineFadeEnd: 1
     - _OutlineFadeStart: 0
     - _OutlineWidth: 1
+    - _ShadowRange: 0.3
     m_Colors:
     - _OutlineColor: {r: 0.6313726, g: 0.36078432, b: 0.24705882, a: 1}
     - _ShadowColor: {r: 1, g: 0.83137256, b: 0.7411765, a: 1}
