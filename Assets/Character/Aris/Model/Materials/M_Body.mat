@@ -129,7 +129,7 @@ Material:
     - _Metallic: 0
     - _NormalIntensity: 0
     - _OcclusionStrength: 1
-    - _OutlineFadeEnd: 0.1
+    - _OutlineFadeEnd: 1
     - _OutlineFadeStart: 0
     - _OutlineToggle: 1
     - _OutlineWidth: 1
