@@ -10,15 +10,22 @@ public class PlayerInput : MonoBehaviour
     [Header("Run")]
     public bool Run = false;
 
+    [Header("BasicAttack")]
+    public bool basicAttack = false;
+    public float basicAttackCoolTime = 0.2f;
+    private float basicAttackCurTime = 0.0f;
+
     private void Start()
     {
         weaponEquipCurTime = weaponEquipCoolTime;
+        basicAttackCurTime = basicAttackCoolTime;
     }
 
     private void Update()
     {
         InputE();
         Running();
+        BasicAttack();
     }
 
     private void InputE()
@@ -48,6 +55,24 @@ public class PlayerInput : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.LeftShift) && Run == true)
         {
             Run = false;
+        }
+    }
+
+    private void BasicAttack()
+    {
+        if (basicAttackCurTime < basicAttackCoolTime)
+        {
+            basicAttackCurTime += Time.deltaTime;
+        }
+        if (Input.GetMouseButtonDown(0) && basicAttack == false && basicAttackCurTime >= basicAttackCoolTime && EKey == true)
+        {
+            basicAttack = true;
+            basicAttackCurTime = 0.0f;
+        }
+        
+        if (basicAttackCurTime >= basicAttackCoolTime)
+        {
+            basicAttack = false;
         }
     }
 }
