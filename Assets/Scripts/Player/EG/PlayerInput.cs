@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
+    [Header("Reference")]
+    public GamePlayerController gamePlayerController;
+
     [Header("Weapon Equip/Unequip")]
     public bool EKey = false;
     public float weaponEquipCoolTime = 0.5f;
@@ -68,6 +71,10 @@ public class PlayerInput : MonoBehaviour
         {
             basicAttack = true;
             basicAttackCurTime = 0.0f;
+            if (gamePlayerController.curBulletCount > 0)
+            {
+                gamePlayerController.curBulletCount -= 1;
+            }
         }
         
         if (basicAttackCurTime >= basicAttackCoolTime)
