@@ -25,6 +25,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _AOMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _DiffuseTex:
         m_Texture: {fileID: 2800000, guid: e56cae5f0cf30ac47aa54c3945b141b0, type: 3}
         m_Scale: {x: 1, y: 1}
