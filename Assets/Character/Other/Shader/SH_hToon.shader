@@ -27,7 +27,10 @@ Shader "URP/HammerToonShader/SH_hToon"
         [Header(Emissive)]
         [Space(20)]
         _EmissiveMask("EmissiveTex", 2D) = "white" {}
-        [HDR]_EmissiveColor("EmissiveColor", color) = (0,0,0,1)
+        _fEmissiveColor("fEmissiveColor", color) = (0,0,0,1)
+        _sEmissiveColor("sEmissiveColor", color) = (0,0,0,1)
+        _GradientRange("GradientRange", Range(0,1)) = 0
+        _EmissivePower("EmissivePower", Range(0,1)) = 0
 
         [Header(Outline)]
         [Space(20)]
@@ -168,7 +171,10 @@ Shader "URP/HammerToonShader/SH_hToon"
 
                 // emissive properties
                 float4 _EmissiveMask_ST;
-                float4 _EmissiveColor;
+                float4 _fEmissiveColor;
+                float4 _sEmissiveColor;
+                float _GradientRange;
+                float _EmissivePower;
             CBUFFER_END
 
             TEXTURE2D(_DiffuseTex);         SAMPLER(sampler_DiffuseTex);
@@ -267,11 +273,12 @@ Shader "URP/HammerToonShader/SH_hToon"
                 half3 mixLightColor = mixLight * saturate(mixAttenuation + mixAttenuationColor);
 
                 // emission
-                half emissionMask = SAMPLE_TEXTURE2D(_EmissiveMask, sampler_EmissiveMask, input.uv).r;
+                half emissionMask = SAMPLE_TEXTURE2D(_EmissiveMask, sampler_EmissiveMask, input.uv).a;
 
                 // final
                 half3 diffuseColor = lerp(diffuse * _ShadowColor, diffuse, mainLightShadow);
-                half3 emissiveColor = emissionMask * _EmissiveColor;
+                float gradientUV = _GradientRange * input.vertexClor.x;
+                half3 emissiveColor = emissionMask * (_EmissivePower * 5) * lerp(_fEmissiveColor, _sEmissiveColor, gradientUV);
                 half3 lightColor = mixLightColor;
                 half3 final = (diffuseColor * lightColor) + emissiveColor;
                 return half4(final, diffuse.a);

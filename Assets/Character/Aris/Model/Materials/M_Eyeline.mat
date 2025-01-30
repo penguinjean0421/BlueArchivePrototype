@@ -57,7 +57,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissiveMask:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 23d8798631f25f343b1311e9ce0c62fc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -121,6 +121,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
+    - _EmissivePower: 1
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -128,6 +129,8 @@ Material:
     - _Metallic: 0
     - _NormalIntensity: 0
     - _OcclusionStrength: 1
+    - _OutlineFadeEnd: 0
+    - _OutlineFadeStart: 0
     - _OutlineToggle: 0
     - _OutlineWidth: 0
     - _Parallax: 0.005

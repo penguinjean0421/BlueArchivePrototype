@@ -1,5 +1,7 @@
 using UnityEngine;
 
+using UnityEngine.UI;
+
 public class GamePlayerController : MonoBehaviour
 {
     [Header("References")]
@@ -9,8 +11,8 @@ public class GamePlayerController : MonoBehaviour
     public Rigidbody rb;
     public Animator animController;
     public PlayerInput playerInputSC;
-    public Transform attackSpawn;
-    public GameObject basicAttackVFX;
+    public GameObject weapon;
+    public Text textBullet;
 
     [Header("PlayerSetting")]
     public float walkSpeed = 0;
@@ -18,11 +20,16 @@ public class GamePlayerController : MonoBehaviour
     public float rotationSpeed = 0;
     public float rbDrag = 3;
 
+    [Header("SkillSetting")]
+    public int bulletCount = 6;
+    public int curBulletCount = 0;
+
     // private vairables
     float horizontalInput = 0.0f;
     float verticalInput = 0.0f;
     private Vector3 moveDir = Vector3.zero;
     private float curSpeed = 0.0f;
+    private bool canAttack = true;
 
     // weapon equip/unequip smooth blend
     float smoothBlend = 0.0f;
@@ -33,6 +40,8 @@ public class GamePlayerController : MonoBehaviour
         Cursor.visible = false;
 
         curSpeed = walkSpeed;
+
+        curBulletCount = bulletCount;
     }
 
     private void Update()
@@ -40,7 +49,9 @@ public class GamePlayerController : MonoBehaviour
         GetInput();
         PlayerRotate();
         WeaponEquip();
-        BasicAttack();
+        BasicAttack(); 
+        Reroading();
+        CheckBullet();
     }
 
     private void FixedUpdate()
@@ -99,7 +110,7 @@ public class GamePlayerController : MonoBehaviour
             animController.SetBool("IsRun", false);
         }
 
-        if (playerInputSC.basicAttack == true)
+        if (playerInputSC.basicAttack == true && canAttack == true)
         {
             curSpeed = 0.0f;
         }
@@ -120,22 +131,26 @@ public class GamePlayerController : MonoBehaviour
             if (smoothBlend < 1.0f)
             {
                 smoothBlend += Time.deltaTime * 3;
+                weapon.GetComponent<Renderer>().material.SetFloat("_EmissivePower", smoothBlend);
             }
-            animController.SetFloat("Weapon Blend", smoothBlend);
         }
         else
         {
             if (smoothBlend > 0)
             {
                 smoothBlend -= Time.deltaTime * 3;
+                if (smoothBlend < 0)
+                {
+                    smoothBlend = 0.0f;
+                }
+                weapon.GetComponent<Renderer>().material.SetFloat("_EmissivePower", smoothBlend);
             }
-            animController.SetFloat("Weapon Blend", smoothBlend);
         }
     }
 
     private void BasicAttack()
     {
-        if (playerInputSC.basicAttack == true)
+        if (playerInputSC.basicAttack == true && canAttack == true)
         {
             animController.SetBool("Attacking", true);
         }
@@ -143,5 +158,29 @@ public class GamePlayerController : MonoBehaviour
         {
             animController.SetBool("Attacking", false);
         }
+    }
+
+    private void Reroading()
+    {
+        if (curBulletCount == 0)
+        {
+            weapon.GetComponent<Renderer>().material.SetFloat("_GradientRange", 1);
+            canAttack = false;
+        }
+        else
+        {
+            weapon.GetComponent<Renderer>().material.SetFloat("_GradientRange", 0);
+            canAttack = true;
+        }
+        
+        if (Input.GetKeyDown("r"))
+        {
+            curBulletCount = bulletCount;
+        }
+    }
+
+    private void CheckBullet()
+    {
+        textBullet.text = curBulletCount.ToString();
     }
 }
